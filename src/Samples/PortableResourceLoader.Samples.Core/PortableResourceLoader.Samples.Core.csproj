@@ -35,9 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Content Include="Images\gps3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Images\gps3.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sample.cs" />
@@ -47,6 +45,7 @@
     <ProjectReference Include="..\..\PortableResourceLoader\PortableResourceLoader.csproj">
       <Project>{8c86c5d5-0812-4e0e-8d5b-d48efcd7ae40}</Project>
       <Name>PortableResourceLoader</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

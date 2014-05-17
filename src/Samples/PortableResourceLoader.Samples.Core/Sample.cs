@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace PortableResourceLoader.Samples.Core
 {
@@ -6,10 +8,10 @@ namespace PortableResourceLoader.Samples.Core
     {
         public static void LoadBitmap()
         {
-            const string path = "Images/gps3.png";
+            const string path = "Images.gps3.png";
 
             var loader = new ResourceLoader();
-            var stream = loader.Load(path, "PortableResourceLoader.Samples.Core");
+            var stream = loader.Load(path, Assembly.GetExecutingAssembly());
             Debug.WriteLine(stream.Length);
         }
     }

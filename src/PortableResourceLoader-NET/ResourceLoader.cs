@@ -1,12 +1,13 @@
 ﻿using System.IO;
+using System.Reflection;
 
 namespace PortableResourceLoader
 {
     public class ResourceLoader
     {
-        public Stream Load(string path, string assembly)
+        public Stream Load(string path, Assembly assembly)
         {
-            return new FileStream(path, FileMode.Open, FileAccess.Read);
+            return assembly.GetManifestResourceStream(assembly.GetName().Name + "." + path);
         }
     }
 }
