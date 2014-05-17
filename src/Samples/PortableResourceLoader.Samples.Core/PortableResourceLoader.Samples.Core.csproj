@@ -38,13 +38,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PortableResourceLoader\PortableResourceLoader.csproj">
-      <Project>{8c86c5d5-0812-4e0e-8d5b-d48efcd7ae40}</Project>
-      <Name>PortableResourceLoader</Name>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Images\checkered.png" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\sample_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PortableResourceLoader\PortableResourceLoader.csproj">
+      <Project>{8c86c5d5-0812-4e0e-8d5b-d48efcd7ae40}</Project>
+      <Name>PortableResourceLoader</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>

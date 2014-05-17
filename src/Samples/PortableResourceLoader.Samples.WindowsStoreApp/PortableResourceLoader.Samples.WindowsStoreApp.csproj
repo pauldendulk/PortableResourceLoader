@@ -103,10 +103,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\..\PortableResourceLoader-W8\PortableResourceLoader-W8.csproj">
-      <Project>{da9fdfd6-2b73-4b76-b7f4-5f1c8b37d2b4}</Project>
-      <Name>PortableResourceLoader-W8</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PortableResourceLoader.Samples.Core\PortableResourceLoader.Samples.Core.csproj">
       <Project>{752d6ecd-c17e-4a3d-9108-f8cfcd00ffe6}</Project>
       <Name>PortableResourceLoader.Samples.Core</Name>
