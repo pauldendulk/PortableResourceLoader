@@ -1,7 +1,7 @@
 PortableResourceLoader
 ======================
 
-Sample project that shows how to load an 'embedded resource' from a PCL.
+Sample project that shows how to load an 'embedded resource' from a PCL and show it as image in the platform specific client.
 
 The PCL profile 147:
 .NET Framework 4.0.3, Silverlight 5, Windows 8, Windows Phone Silverlight 8, Xamarin.Android, Xamarin.iOS
