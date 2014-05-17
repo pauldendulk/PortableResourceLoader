@@ -1,17 +1,24 @@
-﻿using PortableResourceLoader.Samples.Core;
-using System.Windows;
+﻿using System.Windows.Media.Imaging;
+using PortableResourceLoader.Samples.Core;
 
 namespace PortableResourceLoader.Samples.Wpf
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += (sender, args) => LoadSample.LoadBitmapAsStream();
+            Loaded += (sender, args) =>
+            {
+                var bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = LoadSample.LoadBitmapAsStream();
+                bitmapImage.EndInit();
+
+                Image.BeginInit();
+                Image.Source = bitmapImage;
+                Image.EndInit();
+            };
         }
     }
 }
