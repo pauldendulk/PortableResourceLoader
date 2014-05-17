@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using PortableResourceLoader.Samples.Core;
+using Android.Graphics.Drawables;
 
 namespace PortableResourceLoader.Samples.Android
 {
@@ -21,12 +22,10 @@ namespace PortableResourceLoader.Samples.Android
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
-
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+                        
+            var image = FindViewById<ImageView>(Resource.Id.MyImage);
+            image.SetImageDrawable(Drawable.CreateFromStream(LoadSample.LoadBitmapAsStream(), null));
+            //image.SetScaleType(ImageView.ScaleType.);
 
             LoadSample.LoadBitmapAsStream();
         }
