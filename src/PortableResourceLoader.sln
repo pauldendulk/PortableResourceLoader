@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableResourceLoader.Samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableResourceLoader", "PortableResourceLoader\PortableResourceLoader.csproj", "{8C86C5D5-0812-4E0E-8D5B-D48EFCD7AE40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableResourceLoader.Samples.Android", "PortableResourceLoader.Samples.Android\PortableResourceLoader.Samples.Android.csproj", "{174B02A6-F189-40CF-832F-C294A9325D37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableResourceLoader.Samples.Android", "Samples\PortableResourceLoader.Samples.Android\PortableResourceLoader.Samples.Android.csproj", "{174B02A6-F189-40CF-832F-C294A9325D37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

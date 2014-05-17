@@ -71,7 +71,7 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PortableResourceLoader\PortableResourceLoader.csproj">
+    <ProjectReference Include="..\..\PortableResourceLoader\PortableResourceLoader.csproj">
       <Project>{8c86c5d5-0812-4e0e-8d5b-d48efcd7ae40}</Project>
       <Name>PortableResourceLoader</Name>
     </ProjectReference>
