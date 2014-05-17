@@ -38,9 +38,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\checkered.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="diff.name" />
   </ItemGroup>
   <ItemGroup>
