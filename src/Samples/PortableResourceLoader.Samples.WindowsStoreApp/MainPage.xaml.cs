@@ -1,5 +1,4 @@
-﻿using PortableResourceLoader.Samples.Core;
-using System.IO;
+﻿using System.IO;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace PortableResourceLoader.Samples.WindowsStoreApp

@@ -6,7 +6,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using PortableResourceLoader.Samples.Core;
 using Android.Graphics.Drawables;
 
 namespace PortableResourceLoader.Samples.Android

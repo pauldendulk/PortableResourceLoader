@@ -1,5 +1,4 @@
 ﻿using System.Windows.Media.Imaging;
-using PortableResourceLoader.Samples.Core;
 
 namespace PortableResourceLoader.Samples.Wpf
 {

@@ -94,9 +94,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PortableResourceLoader.Samples.Core\PortableResourceLoader.Samples.Core.csproj">
-      <Project>{752d6ecd-c17e-4a3d-9108-f8cfcd00ffe6}</Project>
-      <Name>PortableResourceLoader.Samples.Core</Name>
+    <ProjectReference Include="..\..\PortableResourceLoader\PortableResourceLoader.csproj">
+      <Project>{8c86c5d5-0812-4e0e-8d5b-d48efcd7ae40}</Project>
+      <Name>PortableResourceLoader</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
