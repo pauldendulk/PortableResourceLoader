@@ -94,10 +94,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PortableResourceLoader-NET\PortableResourceLoader-NET.csproj">
-      <Project>{4135437e-6ab4-4b8b-9b05-d865b70abd69}</Project>
-      <Name>PortableResourceLoader-NET</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PortableResourceLoader.Samples.Core\PortableResourceLoader.Samples.Core.csproj">
       <Project>{752d6ecd-c17e-4a3d-9108-f8cfcd00ffe6}</Project>
       <Name>PortableResourceLoader.Samples.Core</Name>

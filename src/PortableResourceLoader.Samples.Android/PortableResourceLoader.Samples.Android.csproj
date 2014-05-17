@@ -71,10 +71,6 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PortableResourceLoader-A\PortableResourceLoader-A.csproj">
-      <Project>{F5E3F6A8-00DD-42B9-A78A-0460F53F7C82}</Project>
-      <Name>PortableResourceLoader-A</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Samples\PortableResourceLoader.Samples.Core\PortableResourceLoader.Samples.Core.csproj">
       <Project>{752D6ECD-C17E-4A3D-9108-F8CFCD00FFE6}</Project>
       <Name>PortableResourceLoader.Samples.Core</Name>

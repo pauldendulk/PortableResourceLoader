@@ -26,8 +26,6 @@ namespace PortableResourceLoader.Samples.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::PortableResourceLoader.Resource.String.ApplicationName = global::PortableResourceLoader.Samples.Android.Resource.String.ApplicationName;
-			global::PortableResourceLoader.Resource.String.Hello = global::PortableResourceLoader.Samples.Android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
