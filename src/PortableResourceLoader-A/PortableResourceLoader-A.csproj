@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResourceLoader.cs" />
+    <Compile Include="..\PortableResourceLoader-NET\ResourceLoader.cs">
+      <Link>ResourceLoader.cs</Link>
+    </Compile>
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

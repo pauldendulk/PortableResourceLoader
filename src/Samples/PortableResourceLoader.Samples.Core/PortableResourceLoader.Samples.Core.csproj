@@ -47,6 +47,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\checkered.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="diff.name" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\sample_image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
