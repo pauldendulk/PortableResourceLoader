@@ -1,18 +1,16 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.IO;
 using System.Reflection;
 
 namespace PortableResourceLoader.Samples.Core
 {
     public class LoadSample
     {
-        public static void LoadBitmap()
+        public static Stream LoadBitmapAsStream()
         {
-            const string path = "Images.gps3.png";
+            const string path = "Images.checkered.png";
 
             var loader = new ResourceLoader();
-            var stream = loader.Load(path, Assembly.GetExecutingAssembly());
-            Debug.WriteLine(stream.Length);
+            return loader.Load(path, Assembly.GetExecutingAssembly());
         }
     }
 }

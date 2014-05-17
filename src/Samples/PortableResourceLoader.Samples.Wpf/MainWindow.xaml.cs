@@ -11,7 +11,7 @@ namespace PortableResourceLoader.Samples.Wpf
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += (sender, args) => LoadSample.LoadBitmap();
+            Loaded += (sender, args) => LoadSample.LoadBitmapAsStream();
         }
     }
 }
