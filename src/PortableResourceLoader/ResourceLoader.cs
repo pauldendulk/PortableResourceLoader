@@ -45,9 +45,7 @@ namespace PortableResourceLoader
 
         private static string GetAssemblyName(Assembly assembly)
         {
-            string name = assembly.FullName;
-            var asmName = new AssemblyName(name);
-            return asmName.Name;
+            return new AssemblyName(assembly.FullName).Name;
         }
     }
 }
