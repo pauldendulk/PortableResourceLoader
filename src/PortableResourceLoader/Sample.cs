@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Reflection;
 
 namespace PortableResourceLoader
 {
@@ -9,7 +8,7 @@ namespace PortableResourceLoader
         {
             const string path = "Images.sample_image.png";
             var loader = new ResourceLoader();
-            return loader.Load(path, Assembly.GetExecutingAssembly());
+            return loader.Load(path);
         }
     }
 }

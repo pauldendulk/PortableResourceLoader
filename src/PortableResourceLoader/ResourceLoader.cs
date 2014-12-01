@@ -7,6 +7,13 @@ namespace PortableResourceLoader
 {
     public class ResourceLoader
     {
+        public Stream Load(string path)
+        {
+            // In more modern PCL profiles this is: var assembly = typeof(ResourceLoader).GetTypeInfo().Assembly;
+            var assembly = typeof(ResourceLoader).Assembly;
+            return Load(path, assembly);
+        }
+
         public Stream Load(string path, Assembly assembly)
         {
             var fullName = GetAssemblyName(assembly) + "." + path;
