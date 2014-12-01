@@ -1,12 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
 using Android.Graphics.Drawables;
+using Android.OS;
+using Android.Widget;
+using PortableResourceLoader.Samples.Wpf;
 
 namespace PortableResourceLoader.Samples.Android
 {
@@ -24,9 +21,6 @@ namespace PortableResourceLoader.Samples.Android
                         
             var image = FindViewById<ImageView>(Resource.Id.MyImage);
             image.SetImageDrawable(Drawable.CreateFromStream(LoadSample.LoadBitmapAsStream(), null));
-            //image.SetScaleType(ImageView.ScaleType.);
-
-            LoadSample.LoadBitmapAsStream();
         }
     }
 }

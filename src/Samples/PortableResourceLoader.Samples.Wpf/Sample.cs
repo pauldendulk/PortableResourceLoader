@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace PortableResourceLoader
+namespace PortableResourceLoader.Samples.Wpf
 {
     public class LoadSample
     {

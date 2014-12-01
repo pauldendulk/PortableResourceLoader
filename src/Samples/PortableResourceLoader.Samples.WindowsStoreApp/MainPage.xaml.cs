@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Windows.UI.Xaml.Media.Imaging;
+using PortableResourceLoader.Samples.Wpf;
 
 namespace PortableResourceLoader.Samples.WindowsStoreApp
 {
