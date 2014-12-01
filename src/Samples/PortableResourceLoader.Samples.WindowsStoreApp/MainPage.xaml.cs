@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using Windows.UI.Xaml.Media.Imaging;
-using PortableResourceLoader.Samples.Wpf;
 
 namespace PortableResourceLoader.Samples.WindowsStoreApp
 {
@@ -12,7 +11,8 @@ namespace PortableResourceLoader.Samples.WindowsStoreApp
         public MainPage()
         {
             InitializeComponent();
-            Loaded += (sender, args) => Image.Source = ToBitmapImage(LoadSample.LoadBitmapAsStream()); 
+            var stream = ResourceLoader.Load("Images.sample_image.png");
+            Loaded += (sender, args) => Image.Source = ToBitmapImage(stream); 
         }
 
         public static BitmapImage ToBitmapImage(Stream stream)

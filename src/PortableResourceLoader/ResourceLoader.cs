@@ -5,21 +5,22 @@ using System.Reflection;
 
 namespace PortableResourceLoader
 {
-    public class ResourceLoader
+    public static class ResourceLoader
     {
-        public Stream Load(string path)
+        public static Stream Load(string path, Assembly assembly = null)
         {
-            // In more modern PCL profiles this is: var assembly = typeof(ResourceLoader).GetTypeInfo().Assembly;
-            var assembly = typeof(ResourceLoader).Assembly;
-            return Load(path, assembly);
-        }
-
-        public Stream Load(string path, Assembly assembly)
-        {
+            if (assembly == null) assembly = GetCurrentAssembly();
             var fullName = GetAssemblyName(assembly) + "." + path;
             var result = assembly.GetManifestResourceStream(fullName);
             if (result == null) throw new Exception(ConstructExceptionMessage(path, assembly));
             return result;
+        }
+
+        private static Assembly GetCurrentAssembly()
+        {
+            // In more modern PCL profiles this is: 
+            // var assembly = typeof(ResourceLoader).GetTypeInfo().Assembly;
+            return typeof(ResourceLoader).Assembly;
         }
 
         private static string ConstructExceptionMessage(string path, Assembly assembly)

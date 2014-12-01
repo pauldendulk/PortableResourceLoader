@@ -1,4 +1,5 @@
-﻿using System.Windows.Media.Imaging;
+﻿using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace PortableResourceLoader.Samples.Wpf
 {
@@ -11,9 +12,9 @@ namespace PortableResourceLoader.Samples.Wpf
             {
                 var bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
-                bitmapImage.StreamSource = LoadSample.LoadBitmapAsStream();
+                bitmapImage.StreamSource = ResourceLoader.Load("Images.sample_image.png");
                 bitmapImage.EndInit();
-
+                Image.Stretch = Stretch.None;
                 Image.BeginInit();
                 Image.Source = bitmapImage;
                 Image.EndInit();
