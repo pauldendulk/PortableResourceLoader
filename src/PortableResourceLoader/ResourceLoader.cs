@@ -15,18 +15,11 @@ namespace PortableResourceLoader
         public static Stream Load(string relativePath, Type typeOfClassInSameAssembly = null)
         {
             if (typeOfClassInSameAssembly == null) typeOfClassInSameAssembly = typeof(ResourceLoader);
-            var assembly = typeOfClassInSameAssembly.Assembly;
+            var assembly = typeOfClassInSameAssembly.GetTypeInfo().Assembly;
             var fullName = GetAssemblyName(assembly) + "." + relativePath;
             var result = assembly.GetManifestResourceStream(fullName);
             if (result == null) throw new Exception(ConstructExceptionMessage(relativePath, assembly));
             return result;
-        }
-
-        private static Assembly GetCurrentAssembly()
-        {
-            // In more modern PCL profiles this is: 
-            // var assembly = typeof(ResourceLoader).GetTypeInfo().Assembly;
-            return typeof(ResourceLoader).Assembly;
         }
 
         private static string ConstructExceptionMessage(string path, Assembly assembly)
