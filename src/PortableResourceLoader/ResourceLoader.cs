@@ -4,21 +4,21 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
+// Just paste this class into your project and use it like:
+// ResourceLoader.Load("images.myimage.png", typeof(MyTypeInSameAssemblyAsImage));
+
 namespace PortableResourceLoader
 {
-    /// <summary>
-    /// Just paste this class into your project and use it like:
-    /// ResourceLoader.Load("images.myimage.png", typeof(MyTypeInSameAssemblyAsImage));
-    /// </summary>
+
     public static class ResourceLoader
     {
-        public static Stream Load(string path, Type typeOfClassInSameAssembly = null)
+        public static Stream Load(string relativePath, Type typeOfClassInSameAssembly = null)
         {
             if (typeOfClassInSameAssembly == null) typeOfClassInSameAssembly = typeof(ResourceLoader);
             var assembly = typeOfClassInSameAssembly.Assembly;
-            var fullName = GetAssemblyName(assembly) + "." + path;
+            var fullName = GetAssemblyName(assembly) + "." + relativePath;
             var result = assembly.GetManifestResourceStream(fullName);
-            if (result == null) throw new Exception(ConstructExceptionMessage(path, assembly));
+            if (result == null) throw new Exception(ConstructExceptionMessage(relativePath, assembly));
             return result;
         }
 
