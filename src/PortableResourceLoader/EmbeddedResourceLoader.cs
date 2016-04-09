@@ -50,7 +50,7 @@ namespace PortableResourceLoader
 
             var nameLength = GetAssemblyName(assembly).Length;
             similarNames = similarNames.Select(fullName => fullName.Remove(0, nameLength + 1)).ToArray();
-            message += " Did you mean: " + string.Join("\n ", similarNames.ToArray()) + ".";
+            message += " Did you mean: " + string.Join(", ", similarNames.ToArray()) + ".";
             Debug.WriteLine(message);
             return message;
         }
