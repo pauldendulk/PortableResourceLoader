@@ -15,18 +15,18 @@ namespace PortableResourceLoader
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="relativePath">This is the path of the resource without the assemlby path but including 
+        /// <param name="relativePathToEmbeddedResource">This is the path of the resource without the assemlby path but including 
         /// possible project folders. So if an image 'myimage.png' is in a project folders 'images' the path is
         /// 'images.myimage.png'. Resources always uses '.' as separators. </param>
         /// <param name="typeInAssemblyOfEmbeddedResource">This should be a type that is in the same assembly
         /// as the EmbeddedResource. It is used to infer the full path and is necessary to load the resource.</param>
         /// <returns></returns>
-        public static Stream Load(string relativePath, Type typeInAssemblyOfEmbeddedResource)
+        public static Stream Load(string relativePathToEmbeddedResource, Type typeInAssemblyOfEmbeddedResource)
         {
             var assembly = typeInAssemblyOfEmbeddedResource.GetTypeInfo().Assembly;
-            var fullName = GetAssemblyName(assembly) + "." + relativePath;
+            var fullName = GetAssemblyName(assembly) + "." + relativePathToEmbeddedResource;
             var result = assembly.GetManifestResourceStream(fullName);
-            if (result == null) throw new Exception(ConstructExceptionMessage(relativePath, assembly));
+            if (result == null) throw new Exception(ConstructExceptionMessage(relativePathToEmbeddedResource, assembly));
             return result;
         }
 
