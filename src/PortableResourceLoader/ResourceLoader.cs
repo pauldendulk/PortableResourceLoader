@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
 namespace PortableResourceLoader
 {
+    /// <summary>
+    /// Just paste this class into your project and use it like:
+    /// ResourceLoader.Load("images.myimage.png", typeof(MyTypeInSameAssemblyAsImage));
+    /// </summary>
     public static class ResourceLoader
     {
-        public static Stream Load(string path, Assembly assembly = null)
+        public static Stream Load(string path, Type typeOfClassInSameAssembly = null)
         {
-            if (assembly == null) assembly = GetCurrentAssembly();
+            if (typeOfClassInSameAssembly == null) typeOfClassInSameAssembly = typeof(ResourceLoader);
+            var assembly = typeOfClassInSameAssembly.Assembly;
             var fullName = GetAssemblyName(assembly) + "." + path;
             var result = assembly.GetManifestResourceStream(fullName);
             if (result == null) throw new Exception(ConstructExceptionMessage(path, assembly));
@@ -29,17 +35,22 @@ namespace PortableResourceLoader
             var message = string.Format(format, path, GetAssemblyName(assembly));
 
             var resourceNames = assembly.GetManifestResourceNames();
-            if (resourceNames.Length == 0) return message + " There are no resources in this assembly.";
-
-            var similarNames = resourceNames.Where(name => path.ToLower().Split(new[] { '.' })
-                .Any(name.ToLower().Contains)).ToArray();
-            if (similarNames.Length > 0)
+            if (resourceNames.Length == 0)
             {
-                var nameLength = GetAssemblyName(assembly).Length;
-                similarNames = similarNames.Select(fullName => fullName.Remove(0, nameLength + 1)).ToArray();
-                return message + " Did you mean: " + string.Join(", ", similarNames.ToArray()) + ".";
+                message += " There are no resources in this assembly.";
+                Debug.WriteLine(message);
+                return message;
             }
 
+            var similarNames = resourceNames.Where(name => path.ToLower().Split('.')
+                .Any(name.ToLower().Contains)).ToArray();
+
+            if (similarNames.Length <= 0) return message;
+
+            var nameLength = GetAssemblyName(assembly).Length;
+            similarNames = similarNames.Select(fullName => fullName.Remove(0, nameLength + 1)).ToArray();
+            message += " Did you mean: " + string.Join("\n ", similarNames.ToArray()) + ".";
+            Debug.WriteLine(message);
             return message;
         }
 
