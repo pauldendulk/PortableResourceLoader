@@ -11,7 +11,7 @@ namespace PortableResourceLoader.Samples.WindowsStoreApp
         public MainPage()
         {
             InitializeComponent();
-            var stream = ResourceLoader.Load("Images.sample_image.png");
+            var stream = EmbeddedResourceLoader.Load("Images.sample_image.png", typeof(EmbeddedResourceLoader));
             Loaded += (sender, args) => Image.Source = ToBitmapImage(stream); 
         }
 

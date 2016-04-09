@@ -16,7 +16,7 @@ namespace PortableResourceLoader.Samples.Android
             SetContentView(Resource.Layout.Main);
                         
             var image = FindViewById<ImageView>(Resource.Id.MyImage);
-            var stream = ResourceLoader.Load("Images.sample_image.png");
+            var stream = EmbeddedResourceLoader.Load("Images.sample_image.png", typeof(EmbeddedResourceLoader));
             image.SetImageDrawable(Drawable.CreateFromStream(stream, null));
         }
     }

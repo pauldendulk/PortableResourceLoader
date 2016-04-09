@@ -5,17 +5,25 @@ using System.Linq;
 using System.Reflection;
 
 // Just paste this class into your project and use it like:
-// ResourceLoader.Load("images.myimage.png", typeof(MyTypeInSameAssemblyAsImage));
+// EmbeddedResourceLoader.Load("images.myimage.png", typeof(MyTypeInSameAssemblyAsImage));
 
 namespace PortableResourceLoader
 {
 
-    public static class ResourceLoader
+    public static class EmbeddedResourceLoader
     {
-        public static Stream Load(string relativePath, Type typeOfClassInSameAssembly = null)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="relativePath">This is the path of the resource without the assemlby path but including 
+        /// possible project folders. So if an image 'myimage.png' is in a project folders 'images' the path is
+        /// 'images.myimage.png'. Resources always uses '.' as separators. </param>
+        /// <param name="typeInAssemblyOfEmbeddedResource">This should be a type that is in the same assembly
+        /// as the EmbeddedResource. It is used to infer the full path and is necessary to load the resource.</param>
+        /// <returns></returns>
+        public static Stream Load(string relativePath, Type typeInAssemblyOfEmbeddedResource)
         {
-            if (typeOfClassInSameAssembly == null) typeOfClassInSameAssembly = typeof(ResourceLoader);
-            var assembly = typeOfClassInSameAssembly.GetTypeInfo().Assembly;
+            var assembly = typeInAssemblyOfEmbeddedResource.GetTypeInfo().Assembly;
             var fullName = GetAssemblyName(assembly) + "." + relativePath;
             var result = assembly.GetManifestResourceStream(fullName);
             if (result == null) throw new Exception(ConstructExceptionMessage(relativePath, assembly));

@@ -12,7 +12,7 @@ namespace PortableResourceLoader.Samples.Wpf
             {
                 var bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
-                bitmapImage.StreamSource = ResourceLoader.Load("Images.sample_image.png");
+                bitmapImage.StreamSource = EmbeddedResourceLoader.Load("Images.sample_image.png", typeof(EmbeddedResourceLoader));
                 bitmapImage.EndInit();
                 Image.Stretch = Stretch.None;
                 Image.BeginInit();
